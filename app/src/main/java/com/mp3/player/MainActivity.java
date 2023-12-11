@@ -74,8 +74,9 @@ public class MainActivity extends AppCompatActivity {
     }
 
     boolean checarPermissao(){
-        int result = ContextCompat.checkSelfPermission(MainActivity.this, Manifest.permission.READ_MEDIA_AUDIO);
-        if(result == PackageManager.PERMISSION_GRANTED){
+        int result1 = ContextCompat.checkSelfPermission(MainActivity.this, Manifest.permission.READ_MEDIA_AUDIO);
+        int result2 = ContextCompat.checkSelfPermission(MainActivity.this, Manifest.permission.READ_EXTERNAL_STORAGE);
+        if(result1 == PackageManager.PERMISSION_GRANTED || result2 == PackageManager.PERMISSION_GRANTED){
             return true;
         }else{
             return false;
@@ -87,6 +88,10 @@ public class MainActivity extends AppCompatActivity {
             Toast.makeText(MainActivity.this,"Permissão para ler as músicas é necessária.",Toast.LENGTH_SHORT).show();
         }else
             ActivityCompat.requestPermissions(MainActivity.this,new String[]{Manifest.permission.READ_MEDIA_AUDIO},123);
+        if(ActivityCompat.shouldShowRequestPermissionRationale(MainActivity.this,Manifest.permission.READ_EXTERNAL_STORAGE)){
+            Toast.makeText(MainActivity.this,"Permissão para ler as músicas é necessária.",Toast.LENGTH_SHORT).show();
+        }else
+            ActivityCompat.requestPermissions(MainActivity.this,new String[]{Manifest.permission.READ_EXTERNAL_STORAGE},123);
     }
 
     @Override
