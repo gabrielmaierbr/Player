@@ -3,37 +3,53 @@ package com.mp3.player;
 import java.io.Serializable;
 
 public class ModeloDeAudio implements Serializable {
-    String path;
-    String title;
-    String duration;
+    String artista, album, titulo, duracao, dados;
 
-    public ModeloDeAudio(String path, String title, String duration) {
-        this.path = path;
-        this.title = title;
-        this.duration = duration;
+    public ModeloDeAudio(String artista, String album, String titulo, String duracao, String dados) {
+        this.artista = artista;
+        this.album = album;
+        this.titulo = titulo;
+        this.duracao = duracao;
+        this.dados = dados;
     }
 
-    public String getPath() {
-        return path;
+    public String getArtista() {
+        return artista;
     }
 
-    public void setPath(String path) {
-        this.path = path;
+    public void setArtista(String artista) {
+        this.artista = artista;
     }
 
-    public String getTitle() {
-        return title;
+    public String getAlbum() {
+        return album;
     }
 
-    public void setTitle(String title) {
-        this.title = title;
+    public void setAlbum(String album) {
+        this.album = album;
     }
 
-    public String getDuration() {
-        return duration;
+    public String getDados() {
+        return dados;
     }
 
-    public void setDuration(String duration) {
-        this.duration = duration;
+    public void setDados(String dados) {
+        this.dados = dados;
+    }
+
+    public String getTitulo() {
+        return titulo;
+    }
+
+    public void setTitulo(String titulo) {
+        this.titulo = titulo;
+    }
+
+    public String getDuracao() {
+        return duracao;
+    }
+
+    public void setDuracao(String duracao) {
+        this.duracao = duracao;
     }
 }
