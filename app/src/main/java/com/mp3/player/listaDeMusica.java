@@ -34,18 +34,28 @@ public class listaDeMusica extends RecyclerView.Adapter<listaDeMusica.ViewHolder
 
     @Override
     public void onBindViewHolder(listaDeMusica.ViewHolder holder, int position) {
-        ModeloDeAudio songData = listaMusicas.get(position);
+        ModeloDeAudio songData = listaMusicas.get(holder.getAdapterPosition());
+
         holder.titleTextView.setText(songData.getTitulo());
+
         MediaMetadataRetriever mmr = new MediaMetadataRetriever();
         mmr.setDataSource(listaMusicas.get(position).getDados());
+
         byte[] arte = mmr.getEmbeddedPicture();
-        Bitmap bitmap = BitmapFactory.decodeByteArray(arte, 0, arte.length);
-        holder.iconImageView.setImageBitmap(bitmap);
-        if (PlayerDeMusica.index == position){
+
+        if (arte != null && arte.length > 0) {
+            Bitmap bitmap = BitmapFactory.decodeByteArray(arte, 0, arte.length);
+            holder.iconImageView.setImageBitmap(bitmap);
+        } else {
+            holder.iconImageView.setImageResource(R.drawable._844724);
+        }
+
+        if (PlayerDeMusica.index == holder.getAdapterPosition()){
             holder.titleTextView.setTextColor(Color.parseColor("#FF0000"));
         }else{
             holder.titleTextView.setTextColor(Color.parseColor("#000000"));
         }
+
 
         holder.itemView.setOnClickListener(new View.OnClickListener() {
             @Override

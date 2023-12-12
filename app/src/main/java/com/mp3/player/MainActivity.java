@@ -1,5 +1,6 @@
 package com.mp3.player;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.app.ActivityCompat;
@@ -16,6 +17,7 @@ import android.graphics.BitmapFactory;
 import android.media.MediaMetadataRetriever;
 import android.os.Bundle;
 import android.provider.MediaStore;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
@@ -57,6 +59,7 @@ public class MainActivity extends AppCompatActivity {
         String selecao = MediaStore.Audio.Media.IS_MUSIC;
 
         Cursor cursor = getContentResolver().query(MediaStore.Audio.Media.EXTERNAL_CONTENT_URI, projecao, selecao,null,null);
+
         while(cursor.moveToNext()){
             ModeloDeAudio dadosMusica = new ModeloDeAudio(cursor.getString(0), cursor.getString(1), cursor.getString(2), cursor.getString(3), cursor.getString(4));
             if(new File(dadosMusica.getDados()).exists()) {
@@ -77,22 +80,58 @@ public class MainActivity extends AppCompatActivity {
         int result1 = ContextCompat.checkSelfPermission(MainActivity.this, Manifest.permission.READ_MEDIA_AUDIO);
         int result2 = ContextCompat.checkSelfPermission(MainActivity.this, Manifest.permission.READ_EXTERNAL_STORAGE);
         if(result1 == PackageManager.PERMISSION_GRANTED || result2 == PackageManager.PERMISSION_GRANTED){
+            requestPermissions(new String[]{Manifest.permission.READ_EXTERNAL_STORAGE}, 123);
             return true;
         }else{
             return false;
         }
     }
 
-    void pedirPermissao(){
-        if(ActivityCompat.shouldShowRequestPermissionRationale(MainActivity.this,Manifest.permission.READ_MEDIA_AUDIO)){
-            Toast.makeText(MainActivity.this,"Permissão para ler as músicas é necessária.",Toast.LENGTH_SHORT).show();
-        }else
-            ActivityCompat.requestPermissions(MainActivity.this,new String[]{Manifest.permission.READ_MEDIA_AUDIO},123);
-        if(ActivityCompat.shouldShowRequestPermissionRationale(MainActivity.this,Manifest.permission.READ_EXTERNAL_STORAGE)){
-            Toast.makeText(MainActivity.this,"Permissão para ler as músicas é necessária.",Toast.LENGTH_SHORT).show();
-        }else
-            ActivityCompat.requestPermissions(MainActivity.this,new String[]{Manifest.permission.READ_EXTERNAL_STORAGE},123);
+    void pedirPermissao() {
+        AlertDialog.Builder builder = new AlertDialog.Builder(this);
+        builder.setTitle("Permissão Necessária");
+        builder.setMessage("Este aplicativo precisa de permissão para acessar suas músicas. Por favor, conceda a permissão.");
+
+        builder.setPositiveButton("Conceder Permissão", (dialog, which) -> {
+            ActivityCompat.requestPermissions(MainActivity.this,
+                    new String[]{Manifest.permission.READ_MEDIA_AUDIO, Manifest.permission.READ_EXTERNAL_STORAGE},
+                    123);
+        });
+
+        builder.setNegativeButton("Cancelar", (dialog, which) -> {
+
+            Toast.makeText(MainActivity.this, "Permissão negada. O aplicativo pode não funcionar corretamente.", Toast.LENGTH_SHORT).show();
+        });
+
+        builder.show();
     }
+
+
+
+
+    @Override
+    public void onRequestPermissionsResult(int requestCode, @NonNull String[] permissions, @NonNull int[] grantResults) {
+        super.onRequestPermissionsResult(requestCode, permissions, grantResults);
+
+        if (requestCode == 123) {
+            boolean allPermissionsGranted = true;
+            for (int result : grantResults) {
+                if (result != PackageManager.PERMISSION_GRANTED) {
+                    allPermissionsGranted = false;
+                    break;
+                }
+            }
+
+            if (allPermissionsGranted) {
+                //Chama RecyclerView - para quem qui-se adicionar!
+            } else {
+
+                Toast.makeText(this, "Permissões necessárias não foram concedidas", Toast.LENGTH_SHORT).show();
+            }
+        }
+    }
+
+
 
     @Override
     protected void onResume() {

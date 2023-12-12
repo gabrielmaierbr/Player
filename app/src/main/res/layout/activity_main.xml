@@ -6,18 +6,35 @@
     android:layout_height="match_parent"
     tools:context=".MainActivity">
 
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:layout_width="415dp"
+        android:layout_height="65dp"
+        android:layout_marginBottom="4dp"
+        android:background="#007BFF"
+        android:minHeight="?attr/actionBarSize"
+        android:theme="?attr/actionBarTheme"
+        app:layout_constraintBottom_toTopOf="@+id/recycler_view"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0" />
+
     <Button
         android:id="@+id/btnSobre"
         android:layout_width="90dp"
-        android:layout_height="35dp"
+        android:layout_height="41dp"
         android:layout_marginStart="40dp"
-        android:layout_marginTop="16dp"
+        android:layout_marginTop="12dp"
         android:fontFamily="monospace"
         android:onClick="alertSobre"
         android:text="Sobre"
         android:textAlignment="center"
         android:textAppearance="@style/TextAppearance.AppCompat.Body1"
         android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.401"
         app:layout_constraintStart_toEndOf="@+id/textView_Musicas"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -25,14 +42,15 @@
         android:id="@+id/textView_Musicas"
         android:layout_width="95dp"
         android:layout_height="35dp"
-        android:layout_marginStart="176dp"
         android:layout_marginTop="16dp"
-        android:layout_marginEnd="177dp"
         android:fontFamily="monospace"
         android:text="Músicas"
         android:textAlignment="center"
+        android:textColor="#000000"
         android:textSize="20sp"
+        android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.411"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -55,9 +73,9 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_below="@id/textView_Musicas"
-        android:layout_marginTop="8dp"
+        android:layout_marginTop="20dp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView_Musicas" />
 

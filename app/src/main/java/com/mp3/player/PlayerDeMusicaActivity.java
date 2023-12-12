@@ -105,12 +105,15 @@ public class PlayerDeMusicaActivity extends AppCompatActivity {
         MediaMetadataRetriever mmr = new MediaMetadataRetriever();
         mmr.setDataSource(musicaAtual.getDados());
         byte[] arte = mmr.getEmbeddedPicture();
-        Bitmap bitmap = BitmapFactory.decodeByteArray(arte, 0, arte.length);
-        icoMusica.setImageBitmap(bitmap);
 
+        if (arte != null && arte.length > 0) {
+            Bitmap bitmap = BitmapFactory.decodeByteArray(arte, 0, arte.length);
+            icoMusica.setImageBitmap(bitmap);
+        } else {
+            icoMusica.setImageResource(R.drawable._844724);
+        }
         playMusica();
     }
-
 
     private void playMusica(){
 
