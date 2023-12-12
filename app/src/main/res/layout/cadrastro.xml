@@ -23,8 +23,8 @@
 
     <Button
         android:id="@+id/button2"
-        android:layout_width="272dp"
-        android:layout_height="54dp"
+        android:layout_width="271dp"
+        android:layout_height="58dp"
         android:layout_marginTop="20dp"
         android:text="cadrastra"
         android:textColor="#FFFFFF"
@@ -64,7 +64,7 @@
         android:id="@+id/editTextText1"
         android:layout_width="359dp"
         android:layout_height="53dp"
-        android:layout_marginBottom="20dp"
+        android:layout_marginBottom="8dp"
         android:background="@drawable/container_edita_texto_login"
         android:drawableRight="@drawable/baseline_person_outline_24"
         android:hint="digite seu nome"
@@ -88,7 +88,7 @@
         android:shadowColor="#3E4FAC"
         android:textColor="#121111"
         tools:layout_editor_absoluteX="26dp"
-        tools:layout_editor_absoluteY="312dp" />
+        tools:layout_editor_absoluteY="304dp" />
 
     <EditText
         android:id="@+id/editTextText3"
@@ -101,7 +101,7 @@
         android:padding="15dp"
         android:textColorHighlight="#9C27B0"
         tools:layout_editor_absoluteX="26dp"
-        tools:layout_editor_absoluteY="385dp" />
+        tools:layout_editor_absoluteY="366dp" />
     />
 
 
