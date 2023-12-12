@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/igor"
+    android:background="@drawable/davi"
     tools:context=".MainActivity">
 
 
@@ -26,7 +26,7 @@
         android:layout_width="271dp"
         android:layout_height="58dp"
         android:layout_marginTop="20dp"
-        android:text="cadrastra"
+        android:text="CADASTRAR"
         android:textColor="#FFFFFF"
         android:textColorHighlight="#009688"
         android:textColorLink="#FFC107"
@@ -40,7 +40,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="12dp"
         android:text="Musica  App"
-        android:textColor="@color/white"
+        android:textColor="#217FA7"
         android:textSize="25dp"
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="@id/containerLogin"
@@ -51,9 +51,9 @@
         android:id="@+id/textDesc"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:textColor="#FFC107"
+        android:textColor="#28CBCF"
         android:layout_marginTop="10dp"
-        android:text="Cadrastra"
+        android:text="Cadrastrar"
         android:textSize="18dp"
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="@id/containerLogin"
@@ -99,7 +99,7 @@
         android:hint="Digite sua Senha"
         android:inputType="numberPassword"
         android:padding="15dp"
-        android:textColorHighlight="#9C27B0"
+        android:textColorHighlight="#217FA7"
         tools:layout_editor_absoluteX="26dp"
         tools:layout_editor_absoluteY="366dp" />
     />
