@@ -7,6 +7,7 @@
     android:background="@drawable/igor"
     tools:context=".MainActivity">
 
+
     <View
         android:id="@+id/containerLogin"
         android:layout_width="match_parent"
@@ -15,22 +16,23 @@
         android:background="@drawable/contaire_login"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.65"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.498" />
+        app:layout_constraintVertical_bias="0.39" />
 
     <Button
         android:id="@+id/button2"
-        android:layout_width="272dp"
-        android:layout_height="66dp"
-        android:layout_marginTop="8dp"
+        android:layout_width="271dp"
+        android:layout_height="58dp"
+        android:layout_marginTop="20dp"
         android:text="cadrastra"
         android:textColor="#FFFFFF"
         android:textColorHighlight="#009688"
         android:textColorLink="#FFC107"
         android:textSize="20dp"
-        app:layout_constraintTop_toBottomOf="@+id/button"
-        tools:layout_editor_absoluteX="71dp" />
+        app:layout_constraintTop_toBottomOf="@+id/editTextText3"
+        tools:layout_editor_absoluteX="81dp" />
 
     <TextView
         android:id="@+id/txtTitle"
@@ -49,9 +51,9 @@
         android:id="@+id/textDesc"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="10dp"
-        android:text="Seja bem vido"
         android:textColor="#FFC107"
+        android:layout_marginTop="10dp"
+        android:text="Cadrastra"
         android:textSize="18dp"
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="@id/containerLogin"
@@ -59,13 +61,13 @@
         app:layout_constraintTop_toBottomOf="@id/txtTitle" />
 
     <EditText
-        android:id="@+id/editTextText"
+        android:id="@+id/editTextText1"
         android:layout_width="359dp"
         android:layout_height="53dp"
         android:layout_marginBottom="8dp"
-        android:drawableRight="@drawable/baseline_person_outline_24"
         android:background="@drawable/container_edita_texto_login"
-        android:hint="Digite seu Nome"
+        android:drawableRight="@drawable/baseline_person_outline_24"
+        android:hint="digite seu nome"
         android:maxLines="1"
         android:padding="15dp"
         android:shadowColor="#3E4FAC"
@@ -76,39 +78,31 @@
     <EditText
         android:id="@+id/editTextText2"
         android:layout_width="359dp"
-        android:layout_height="wrap_content"
+        android:layout_height="0dp"
+        android:background="@drawable/container_edita_texto_login"
+        android:drawableRight="@drawable/baseline_email_24"
+        android:hint="digite seu gmail"
+        android:inputType="textWebEmailAddress"
+        android:maxLines="1"
+        android:padding="15dp"
+        android:shadowColor="#3E4FAC"
+        android:textColor="#121111"
+        tools:layout_editor_absoluteX="26dp"
+        tools:layout_editor_absoluteY="304dp" />
+
+    <EditText
+        android:id="@+id/editTextText3"
+        android:layout_width="359dp"
+        android:layout_height="54dp"
         android:background="@drawable/container_edita_texto_login"
         android:drawableRight="@drawable/baseline_remove_red_eye_24"
+        android:hint="Digite sua Senha"
         android:inputType="numberPassword"
         android:padding="15dp"
-        android:hint="Digite sua Senha"
         android:textColorHighlight="#9C27B0"
         tools:layout_editor_absoluteX="26dp"
-        tools:layout_editor_absoluteY="317dp" />
+        tools:layout_editor_absoluteY="366dp" />
+    />
 
-    <Button
-        android:id="@+id/button"
-        android:layout_width="272dp"
-        android:layout_height="64dp"
-        android:layout_marginTop="8dp"
-        android:text="login"
-        android:textColor="#FFFFFF"
-        android:textColorHighlight="#009688"
-        android:textColorLink="#FFC107"
-        android:textSize="20dp"
-        app:layout_constraintTop_toBottomOf="@+id/textView"
-        tools:layout_editor_absoluteX="71dp" />
-
-    <TextView
-        android:id="@+id/textView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="8dp"
-        android:text="Esqueceu a Senha"
-        android:textColor="#2196F3"
-        android:textSize="18sp"
-        android:textStyle="bold"
-        app:layout_constraintTop_toBottomOf="@+id/editTextText2"
-        tools:layout_editor_absoluteX="123dp" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
