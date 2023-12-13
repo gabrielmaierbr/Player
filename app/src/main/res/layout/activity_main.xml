@@ -20,6 +20,7 @@
 
     <Button
         android:id="@+id/btnSobre"
+        style="@style/Widget.AppCompat.Button"
         android:layout_width="93dp"
         android:layout_height="40dp"
         android:layout_marginStart="40dp"
