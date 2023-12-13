@@ -16,17 +16,16 @@
         android:background="@drawable/contaire_login"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.65"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.39" />
+        app:layout_constraintVertical_bias="0.392" />
 
     <Button
         android:id="@+id/button2"
         android:layout_width="271dp"
         android:layout_height="58dp"
         android:layout_marginTop="20dp"
-        android:text="CADASTRAR"
+        android:text="Cadrastra"
         android:textColor="#FFFFFF"
         android:textColorHighlight="#009688"
         android:textColorLink="#FFC107"
@@ -67,7 +66,7 @@
         android:layout_marginBottom="8dp"
         android:background="@drawable/container_edita_texto_login"
         android:drawableRight="@drawable/baseline_person_outline_24"
-        android:hint="digite seu nome"
+        android:hint="Digite seu Nome"
         android:maxLines="1"
         android:padding="15dp"
         android:shadowColor="#3E4FAC"
@@ -81,14 +80,14 @@
         android:layout_height="0dp"
         android:background="@drawable/container_edita_texto_login"
         android:drawableRight="@drawable/baseline_email_24"
-        android:hint="digite seu gmail"
+        android:hint="Digite seu Email"
         android:inputType="textWebEmailAddress"
         android:maxLines="1"
         android:padding="15dp"
         android:shadowColor="#3E4FAC"
         android:textColor="#121111"
         tools:layout_editor_absoluteX="26dp"
-        tools:layout_editor_absoluteY="304dp" />
+        tools:layout_editor_absoluteY="284dp" />
 
     <EditText
         android:id="@+id/editTextText3"
@@ -101,7 +100,7 @@
         android:padding="15dp"
         android:textColorHighlight="#217FA7"
         tools:layout_editor_absoluteX="26dp"
-        tools:layout_editor_absoluteY="366dp" />
+        tools:layout_editor_absoluteY="348dp" />
     />
 
 
