@@ -4,6 +4,6 @@
         <!-- Customize your light theme here. -->
         <item name="colorPrimary">@color/blue</item>
     </style>
-
+//pao//
     <style name="Theme.Player" parent="Base.Theme.Player" />
 </resources>
