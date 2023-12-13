@@ -1,119 +1,151 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="#EFEFEF"
     tools:context=".PlayerDeMusicaActivity">
 
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="match_parent"
+        android:layout_height="563dp"
+        app:srcCompat="@drawable/palaroid" />
+
     <TextView
         android:id="@+id/tituloMusica"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginStart="20dp"
-        android:layout_marginTop="20dp"
-        android:layout_marginEnd="20dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginStart="0dp"
+        android:layout_marginTop="2dp"
+        android:layout_marginEnd="40dp"
         android:layout_marginBottom="20dp"
         android:ellipsize="marquee"
-        android:padding="20dp"
         android:maxLines="1"
+        android:padding="20dp"
         android:text="Título da Música"
         android:textColor="@color/black"
         android:textSize="20dp" />
 
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:id="@+id/nomeArtista"
-            android:layout_marginStart="20dp"
-            android:layout_marginTop="50dp"
-            android:layout_marginEnd="20dp"
-            android:layout_marginBottom="20dp"
-            android:ellipsize="marquee"
-            android:padding="20dp"
-            android:maxLines="1"
-            android:text="Artista"
-            android:textColor="@color/black"
-            android:textSize="16dp" />
+    <TextView
+        android:id="@+id/nomeArtista"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignTop="@+id/tituloMusica"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginStart="0dp"
+        android:layout_marginTop="32dp"
+        android:layout_marginEnd="40dp"
+        android:layout_marginBottom="20dp"
+        android:ellipsize="marquee"
+        android:maxLines="1"
+        android:padding="20dp"
+        android:text="Artista"
+        android:textColor="@color/black"
+        android:textSize="16dp" />
 
-            <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:id="@+id/nomeAlbum"
-            android:layout_marginStart="20dp"
-            android:layout_marginTop="80dp"
-            android:layout_marginEnd="20dp"
-            android:layout_marginBottom="20dp"
-            android:ellipsize="marquee"
-            android:padding="20dp"
-            android:maxLines="1"
-            android:text="Album"
-            android:textColor="@color/black"
-            android:textSize="16dp" />
+    <TextView
+        android:id="@+id/nomeAlbum"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignTop="@+id/tituloMusica"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginStart="1dp"
+        android:layout_marginTop="58dp"
+        android:layout_marginEnd="39dp"
+        android:layout_marginBottom="20dp"
+        android:ellipsize="marquee"
+        android:maxLines="1"
+        android:padding="20dp"
+        android:text="Album"
+        android:textColor="@color/black"
+        android:textSize="16dp" />
 
     <ImageView
-        android:layout_width="240dp"
-        android:layout_height="240dp"
         android:id="@+id/imgMusica"
-        android:layout_centerHorizontal="true"
-        android:layout_marginBottom="30dp"
-        android:padding="1dp"
+        android:layout_width="198dp"
+        android:layout_height="217dp"
         android:layout_above="@id/controles"
-        android:src="@drawable/_844724"/>
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginStart="102dp"
+        android:layout_marginTop="125dp"
+        android:layout_marginEnd="111dp"
+        android:layout_marginBottom="36dp"
+        android:padding="1dp"
+        android:src="@drawable/_844724" />
 
     <RelativeLayout
+        android:id="@+id/controles"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
-        android:id="@+id/controles"
+        android:layout_marginBottom="124dp"
         android:padding="40dp">
 
         <SeekBar
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
             android:id="@+id/barra"
-            android:layout_margin="10dp"
-            android:backgroundTint="@color/white"/>
+            android:layout_width="355dp"
+            android:layout_height="wrap_content"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentEnd="true"
+            android:layout_marginStart="14dp"
+            android:layout_marginEnd="2dp"
+            android:layout_marginBottom="10dp"
+            android:backgroundTint="@color/white" />
 
         <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
             android:id="@+id/tempoAtual"
-            android:layout_below="@id/barra"
-            android:text="0:00"
-            android:layout_alignParentStart="true"
-            android:textColor="@color/black"
-            android:layout_margin="20dp"/>
-        <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_below="@id/barra"
-            android:id="@+id/tempoTotal"
+            android:layout_alignParentStart="true"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="20dp"
+            android:layout_marginEnd="20dp"
+            android:layout_marginBottom="20dp"
             android:text="0:00"
+            android:textColor="@color/black" />
+
+        <TextView
+            android:id="@+id/tempoTotal"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/barra"
             android:layout_alignParentEnd="true"
-            android:textColor="@color/black"
-            android:layout_margin="20dp"/>
+            android:layout_margin="20dp"
+            android:text="0:00"
+            android:textColor="@color/black" />
 
         <RelativeLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_below="@id/tempoTotal"
+            android:layout_marginTop="-25dp"
             android:padding="20dp">
 
             <ImageView
+                android:id="@+id/anterior"
                 android:layout_width="90dp"
                 android:layout_height="90dp"
-                android:src="@drawable/baseline_skip_previous_24"
-                android:layout_centerVertical="true"
                 android:layout_alignParentStart="true"
-                android:id="@+id/anterior"/>
+                android:layout_centerVertical="true"
+                android:src="@drawable/baseline_skip_previous_24" />
+
             <ImageView
+                android:id="@+id/proximo"
                 android:layout_width="90dp"
                 android:layout_height="90dp"
-                android:src="@drawable/baseline_skip_next_24"
-                android:layout_centerVertical="true"
                 android:layout_alignParentEnd="true"
-                android:id="@+id/proximo"/>
+                android:layout_centerVertical="true"
+                android:src="@drawable/baseline_skip_next_24" />
 
             <ImageView
                 android:id="@+id/pause_play"

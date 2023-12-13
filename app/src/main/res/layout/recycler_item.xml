@@ -4,29 +4,28 @@
     android:layout_height="wrap_content"
     android:background="#EFEFEF"
     android:layout_marginTop="5dp"
-    android:layout_marginLeft="5dp"
-    android:layout_marginRight="5dp"
+    android:layout_marginLeft="10dp"
+    android:layout_marginRight="10dp"
     android:paddingTop="10dp"
     android:paddingBottom="10dp"
     xmlns:tools="http://schemas.android.com/tools">
 
 
     <ImageView
-        android:layout_width="36dp"
-        android:layout_height="36dp"
         android:id="@+id/icoMus"
-        android:layout_centerVertical="true"
-        android:src="@drawable/_844724"/>
+        android:layout_width="58dp"
+        android:layout_height="51dp"
+        android:src="@drawable/_844724" />
 
     <TextView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_centerVertical="true"
         android:id="@+id/tituloMus"
+        android:layout_width="325dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="9dp"
         android:layout_toEndOf="@id/icoMus"
-        android:padding="10dp"
-        android:maxLines="1"
         android:ellipsize="end"
-        tools:text="Music"
-        android:textColor="@color/black"/>
+        android:maxLines="1"
+        android:padding="10dp"
+        android:textColor="@color/black"
+        tools:text="Music" />
 </RelativeLayout>
