@@ -10,6 +10,7 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import android.Manifest;
 import android.annotation.SuppressLint;
+import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.database.Cursor;
 import android.graphics.Bitmap;
@@ -148,5 +149,10 @@ public class MainActivity extends AppCompatActivity {
         sobre.setMessage("Membros:\n - Rafael Neri\n - Davi Oliveira\n - Danilo Dias\n - Igor\n - Gabriel Maier\n\nProfessor: Victor Moak");
         sobre.setPositiveButton("OK", null);
         sobre.create().show();
+    }
+
+    public void telaLogin(View view){
+        Intent login = new Intent(MainActivity.this, login.class);
+        startActivity(login);
     }
 }
